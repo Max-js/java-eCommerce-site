@@ -48,6 +48,8 @@ public class BootStrapData implements CommandLineRunner {
             pickups.setCompanyName("Bareknuckle Pickups");
             pickups.setName("Aftermath Pickups 6 String Set");
             pickups.setInv(5);
+            pickups.setMinInv(0);
+            pickups.setMaxInv(1000);
             pickups.setPrice(200.0);
             pickups.setId(100L);
             outsourcedPartRepository.save(pickups);
@@ -62,6 +64,8 @@ public class BootStrapData implements CommandLineRunner {
             tuners.setCompanyName("Hipshot");
             tuners.setName("Hipshot Open Gear 6 String Set");
             tuners.setInv(5);
+            tuners.setMinInv(0);
+            tuners.setMaxInv(1000);
             tuners.setPrice(80.0);
             tuners.setId(101L);
             outsourcedPartRepository.save(tuners);
@@ -70,6 +74,8 @@ public class BootStrapData implements CommandLineRunner {
             bridge.setCompanyName("Hipshot");
             bridge.setName("Hipshot Bridge 6 String");
             bridge.setInv(5);
+            bridge.setMinInv(0);
+            bridge.setMaxInv(1000);
             bridge.setPrice(200.0);
             bridge.setId(102L);
             outsourcedPartRepository.save(bridge);
@@ -84,6 +90,8 @@ public class BootStrapData implements CommandLineRunner {
             InhousePart guitarBody = new InhousePart();
             guitarBody.setName("Standard Guitar Body");
             guitarBody.setInv(5);
+            guitarBody.setMinInv(0);
+            guitarBody.setMaxInv(1000);
             guitarBody.setPrice(500.0);
             guitarBody.setId(103L);
             inhousePartRepository.save(guitarBody);
@@ -91,6 +99,8 @@ public class BootStrapData implements CommandLineRunner {
             InhousePart guitarNeck = new InhousePart();
             guitarNeck.setName("Standard Guitar Neck");
             guitarNeck.setInv(5);
+            guitarNeck.setMinInv(0);
+            guitarNeck.setMaxInv(1000);
             guitarNeck.setPrice(300.0);
             guitarNeck.setId(104L);
             inhousePartRepository.save(guitarNeck);

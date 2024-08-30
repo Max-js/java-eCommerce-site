@@ -25,3 +25,19 @@ Changes Implemented:
         - BuyNow.java Lines 1-32: Create controller for buy now button. Controller includes get mapping directing to if statement that decrements the product inventory by 1 if the product exists, then returns a success message. If purchase fails, a failure message is returned.
         - success.html Lines 1 - 16: create view showing successful purchase message and button linking back to main page
         - failure.html Lines 1 16: create view showing failure message and button linking back to main page.
+    
+    #Part G: Modify the parts to track maximum and minimum inventory.
+        - Part.java Line 6: import Maximum validation constraint
+        - Part.java Lines 33 - 38: Define min and max variables
+        - Part.java Lines 58 - 59: Add min and max defaults to Part object
+        - Part.java Lines 94 - 118: Define getter and setter methods for minimum and maximum inventory, as well as method to enforce inventory limits.
+        - PartServiceImpl.java Line 59: add method to enforce inventory limits on save
+        - OutsourcedPartServiceImpl.java Line 52: add method to enforce inventory limits on save
+        - InhousePartServiceImpl.java Line 54: add method to enforce inventory limits on save
+        - InhousePart.java Lines 18-19: add default values for min and max inventory
+        - OutsourcedPart.java Lines 18-19: add default values for min and max inventory
+        - BootStrapData.java Lines 51-52, 67-68, 77-78, 93-94, 102-103: add default min and max inventory values to each part
+        - InhousePartForm.html Lines 18, 22, 25-28, 30-34: Add titles above each input field for clarity. Add minimum and max inventory input fields.
+        - OutsourcedPartForm.html Lines 19, 23, 27-35: Add titles above each input field for clarity. Add minimum and max inventory input fields.
+        - application.properties Line 6: change name of database file
+        
