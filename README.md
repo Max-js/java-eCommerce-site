@@ -1,16 +1,19 @@
 # Max Smith Java Frameworks Project
 
 Changes Implemented:
+
     # Part C: Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
         - mainscreen.html Line 14: changed shop name
         - mainscreen.html Line 19: changed shop name
         - mainscreen.html Line 22: changed parts heading
         - mainscreen.html Line 53: changed product name
         - productForm.html Line 12: changed part heading
+
     #Part D: Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
         - AboutScreenController.java: Create file and contents
         - aboutScreen.html: Create file and contents
         - mainscreen.html Line 20: Add About Us button to redirect to About Us page
+
     #Part E: Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
         - BootStrapData.java Line 4: add import for inhousePart
         - BootStrapData.java Line 8: add import for InhousePartRepository
@@ -40,4 +43,3 @@ Changes Implemented:
         - InhousePartForm.html Lines 18, 22, 25-28, 30-34: Add titles above each input field for clarity. Add minimum and max inventory input fields.
         - OutsourcedPartForm.html Lines 19, 23, 27-35: Add titles above each input field for clarity. Add minimum and max inventory input fields.
         - application.properties Line 6: change name of database file
-        
