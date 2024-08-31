@@ -43,3 +43,14 @@ Changes Implemented:
         - InhousePartForm.html Lines 18, 22, 25-28, 30-34: Add titles above each input field for clarity. Add minimum and max inventory input fields.
         - OutsourcedPartForm.html Lines 19, 23, 27-35: Add titles above each input field for clarity. Add minimum and max inventory input fields.
         - application.properties Line 6: change name of database file
+
+    #Part H: Add validation for between or at the maximum and minimum fields.
+        - ValidMinParts.java Lines 1-25: Create file, add default message for when parts fall below minimum
+        - ValidMaxParts.java Lines 1-25: Create file, add default message for when parts inventory is above allowable maximum
+        - MinPartValidator Lines 1-24: Create file. Create function to validate if part inventory is greater than minimum allowable inventory.
+        - MaxPartValidator Lines 1-24: Create file. Create function to validate if part inventory is less than maximum allowable inventory.
+        - Part.java Lines 4-5: import validators for min and max parts
+        - Part.java Lines 22-23: add validators so they can be utilized
+        - InhousePartForm.html Lines 38-40: Add error message from validator to in house part form so it can be triggered by the submit action.
+        - OutsourcedPartForm.html Lines 39-41: Add error message from validator to outsourced part form so it can be triggered by the submit action.
+        - EnufPartsValidator.java Lines 36-40: Add Inventory too low error message

@@ -35,6 +35,9 @@
 <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p>
 
 <p><input type="submit" value="Submit" /></p>
+<div th:if="${#fields.hasErrors()}">
+    <p style="color: red;" th:each="err : ${#fields.allErrors()}" th:text="${err}" class="error"></p>
+</div>
 </form>
 <p><errors path="price" cssClass=""error/><p>
 

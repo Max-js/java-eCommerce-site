@@ -36,6 +36,9 @@
 <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
 
 <p><input type="submit" value="Submit" /></p>
+<div th:if="${#fields.hasErrors()}">
+    <p style="color: red;" th:each="err : ${#fields.allErrors()}" th:text="${err}" class="error"></p>
+</div>
 </form>
 <a href="http://localhost:8080/">Link
     to Main Screen</a>
