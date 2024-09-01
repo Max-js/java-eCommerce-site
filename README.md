@@ -54,3 +54,8 @@ Changes Implemented:
         - InhousePartForm.html Lines 38-40: Add error message from validator to in house part form so it can be triggered by the submit action.
         - OutsourcedPartForm.html Lines 39-41: Add error message from validator to outsourced part form so it can be triggered by the submit action.
         - EnufPartsValidator.java Lines 36-40: Add Inventory too low error message
+    
+    #Part I: Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+        - PartTest.java Lines 104-121: Add 2 unit tests, one for setting minimum inventory and one for settng maximum inventory.
+    
+    
