@@ -21,9 +21,13 @@ public class BuyNow {
 
         if(productId.isPresent()) {
             Product product = productId.get();
-            product.setInv(product.getInv() - 1);
-            productRepository.save(product);
-            return "/success";
+            if(product.getInv() > 1) {
+                product.setInv(product.getInv() - 1);
+                productRepository.save(product);
+                return "/success";
+            } else {
+                return"/failure";
+            }
         } else {
             return "/failure";
         } 
