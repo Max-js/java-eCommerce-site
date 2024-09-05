@@ -21,7 +21,7 @@ public class BuyNow {
 
         if(productId.isPresent()) {
             Product product = productId.get();
-            if(product.getInv() > 1) {
+            if(product.getInv() > 0) {
                 product.setInv(product.getInv() - 1);
                 productRepository.save(product);
                 return "/success";
