@@ -1,26 +1,63 @@
-<strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
+# Max Smith Java Frameworks Project
 
-# WESTERN GOVERNORS UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
-Welcome to Java Frameworks! This is an opportunity for students to implement user interfaces and learn to leverage existing frameworks, assets, and content for object-oriented programming.
-FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
-## BASIC INSTRUCTIONS
-For this project, you will use the Integrated Development Environment (IDE) link in the web links section of this assessment to install the IDE, IntelliJ IDEA (Ultimate Edition). All relevant links are on the course page. Please refer to the course of study for specific links. You will sign up for a free student license using your WGU.edu email address. Please see the “IntelliJ Ultimate Edition Instructions” attachment for instructions on how do this. Next you will download the “Inventory Management Application Template Code” provided in the web links section and open it in IntelliJ IDEA (Ultimate Edition). You will upload this project to a private external GitLab repository and backup regularly. As a part of this, you have been provided with a base code (starting point). 
+Changes Implemented:
 
-## SUPPLEMENTAL RESOURCES  
-1.	How to clone a project to IntelliJ using Git?
+    # Part C: Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+        - mainscreen.html Line 14: changed shop name
+        - mainscreen.html Line 19: changed shop name
+        - mainscreen.html Line 22: changed parts heading
+        - mainscreen.html Line 53: changed product name
+        - productForm.html Line 12: changed part heading
 
-> Ensure that you have Git installed on your system and that IntelliJ is installed using [Toolbox](https://www.jetbrains.com/toolbox-app/). Make sure that you are using version 2022.3.2. Once this has been confirmed, click the clone button and use the 'IntelliJ IDEA (HTTPS)' button. This will open IntelliJ with a prompt to clone the proejct. Save it in a safe location for the directory and press clone. IntelliJ will prompt you for your credentials. Enter in your WGU Credentials and the project will be cloned onto your local machine.  
+    #Part D: Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+        - AboutScreenController.java: Create file and contents
+        - aboutScreen.html: Create file and contents
+        - mainscreen.html Line 20: Add About Us button to redirect to About Us page
 
-2. How to create a branch and start Development?
+    #Part E: Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+        - BootStrapData.java Line 4: add import for inhousePart
+        - BootStrapData.java Line 8: add import for InhousePartRepository
+        - BootStrapData.java Line 34: add private final for InhousePartRepository
+        - BootStrapData.java Line 40: add alias for inhousePartRepository
+        - BootStrapData.java Line 46 - 80: add if statement to load outsourced parts if the count of the outsourced part repository is 0. This loads in pickups, tuners, and bridge outsourced parts.
+        - BootStrapData.java Line 83 - 96: add if statement to load inhouse parts if the count in the inhouse part repository is 0. This loads in guitar necks and guitar bodies.
+        - BootStrapData.java Line 99 - 110: Add if statement to load products into the product repository if the current repository count is 0. This loads in my 5 different guitar products (double cut, single cut, flying v, explorer, and headless).
 
-- GitLab method
-> Press the '+' button located near your branch name. In the dropdown list, press the 'New branch' button. This will allow you to create a name for your branch. Once the branch has been named, you can select 'Create Branch' to push the branch to your repository.
+    #Part F: Add a “Buy Now” button to your product list.
+        - mainscreen.html Line 87: Add buy now button
+        - BuyNow.java Lines 1-32: Create controller for buy now button. Controller includes get mapping directing to if statement that decrements the product inventory by 1 if the product exists, then returns a success message. If purchase fails, a failure message is returned.
+        - success.html Lines 1 - 16: create view showing successful purchase message and button linking back to main page
+        - failure.html Lines 1 16: create view showing failure message and button linking back to main page.
+    
+    #Part G: Modify the parts to track maximum and minimum inventory.
+        - Part.java Line 6: import Maximum validation constraint
+        - Part.java Lines 33 - 38: Define min and max variables
+        - Part.java Lines 58 - 59: Add min and max defaults to Part object
+        - Part.java Lines 94 - 118: Define getter and setter methods for minimum and maximum inventory, as well as method to enforce inventory limits.
+        - PartServiceImpl.java Line 59: add method to enforce inventory limits on save
+        - OutsourcedPartServiceImpl.java Line 52: add method to enforce inventory limits on save
+        - InhousePartServiceImpl.java Line 54: add method to enforce inventory limits on save
+        - InhousePart.java Lines 18-19: add default values for min and max inventory
+        - OutsourcedPart.java Lines 18-19: add default values for min and max inventory
+        - BootStrapData.java Lines 51-52, 67-68, 77-78, 93-94, 102-103: add default min and max inventory values to each part
+        - InhousePartForm.html Lines 18, 22, 25-28, 30-34: Add titles above each input field for clarity. Add minimum and max inventory input fields.
+        - OutsourcedPartForm.html Lines 19, 23, 27-35: Add titles above each input field for clarity. Add minimum and max inventory input fields.
+        - application.properties Line 6: change name of database file
 
-- IntelliJ method
-> In IntelliJ, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
-
-## SUPPORT
-If you need additional support, please navigate to the course page and reach out to your course instructor.
-## FUTURE USE
-Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+    #Part H: Add validation for between or at the maximum and minimum fields.
+        - ValidMinParts.java Lines 1-25: Create file, add default message for when parts fall below minimum
+        - ValidMaxParts.java Lines 1-25: Create file, add default message for when parts inventory is above allowable maximum
+        - MinPartValidator Lines 1-24: Create file. Create function to validate if part inventory is greater than minimum allowable inventory.
+        - MaxPartValidator Lines 1-24: Create file. Create function to validate if part inventory is less than maximum allowable inventory.
+        - Part.java Lines 4-5: import validators for min and max parts
+        - Part.java Lines 22-23: add validators so they can be utilized
+        - InhousePartForm.html Lines 38-40: Add error message from validator to in house part form so it can be triggered by the submit action.
+        - OutsourcedPartForm.html Lines 39-41: Add error message from validator to outsourced part form so it can be triggered by the submit action.
+        - EnufPartsValidator.java Lines 36-40: Add Inventory too low error message
+    
+    #Part I: Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+        - PartTest.java Lines 104-121: Add 2 unit tests, one for setting minimum inventory and one for settng maximum inventory.
+    
+    #Part J: Remove the class files for any unused validators in order to clean your code.
+        - DeletePartValidator.java: Deleted File
+        - ValidDeletePart.java: Deleted file
